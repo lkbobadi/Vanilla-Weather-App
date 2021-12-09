@@ -1,0 +1,67 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+.wrapper {
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+  background: #a3b9c9;
+  width: 500px;
+  border-radius: 30px;
+}
+
+#search-input {
+  width: 85%;
+  padding: 5px;
+  background: #fff;
+  color: #000;
+  border: 0;
+  border-radius: 30px 0 0 30px;
+}
+
+#search-submit {
+  width: 15%;
+  padding: 5px;
+  border: 0;
+  color: #fff;
+  background: #a09cb0;
+  transition: all 200ms ease-in-out;
+  border-radius: 0 30px 30px 0;
+}
+
+#search-submit:hover {
+  background: #827c99;
+  color: #fff;
+}
+
+.container {
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  background: #bbe6ec;
+}
+
+.main-weather {
+  display: block;
+  margin: 0 auto;
+  background: white;
+  max-width: 500px;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.extra-info {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 8px;
+  font-size: 12px;
+  color: #987d7c;
+  text-align: center;
+}
+
+.extra-days {
+  background: #e2e8ec;
+  text-align: center;
+}
