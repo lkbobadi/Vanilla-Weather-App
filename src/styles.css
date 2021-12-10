@@ -64,8 +64,7 @@
 }
 .humidity,
 .wind,
-.temp-max,
-.temp-min {
+.country {
   position: relative;
   bottom: 120px;
   background: #fffffc;
@@ -88,9 +87,6 @@
 }
 
 .switch-degrees button {
-  text-decoration: none;
-  color: #cecac1;
-  transition: all 200ms ease-in;
   cursor: default;
   margin: 0 auto;
   border: 0px;
@@ -103,7 +99,10 @@
   background: #464239;
   color: #cecac1;
 }
-
+.celsius:focus {
+  background: #9b9589;
+  color: #5c5952;
+}
 .farenheit {
   border-radius: 0px 30px 30px 0px;
   font-size: 14px;
@@ -111,16 +110,9 @@
   color: #cecac1;
 }
 
-.farenheit:active {
-  border-radius: 0px 30px 30px 0px;
-  font-size: 14px;
+.farenheit:focus {
   background: #9b9589;
   color: #5c5952;
-}
-
-.switch-degrees button:hover {
-  text-decoration: none;
-  color: #cecac1;
 }
 
 .future-weather {
@@ -136,4 +128,15 @@
 .symbol img {
   width: 100px;
   color: #464239;
+}
+
+footer {
+  font-family: "Cairo", sans-serif;
+  text-align: center;
+  font-size: 12px;
+  background: #464239;
+  margin: 0 auto;
+  display: block;
+  color: #cecac1;
+  max-width: 600px;
 }

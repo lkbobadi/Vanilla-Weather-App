@@ -33,6 +33,7 @@ weekDay.innerHTML = days[day];
 date.innerHTML = time;
 
 function showTemperature(response) {
+  console.log(response.data);
   let icon = document.querySelector("#icon");
   icon.setAttribute(
     "src",
@@ -41,6 +42,8 @@ function showTemperature(response) {
   let description = document.querySelector(".weather-description");
   description.innerHTML = response.data.list[0].weather[0].main;
 
+  let country = document.querySelector(".country");
+  country.innerHTML = `Country: ${response.data.list[0].sys.country}`;
   let humidity = document.querySelector(".humidity");
   humidity.innerHTML = `Humidity: ${Math.round(
     response.data.list[0].main.humidity
@@ -50,18 +53,6 @@ function showTemperature(response) {
   windSpeed.innerHTML = `Wind Speed: ${Math.round(
     response.data.list[0].wind.speed
   )}m/s`;
-
-  let tempMax = document.querySelector(".temp-max");
-  tempMax.innerHTML = `Temp High: ${Math.round(
-    response.data.list[0].main.temp_max
-  )}°F`;
-
-  let tempMin = document.querySelector(".temp-min");
-  tempMin.innerHTML = `Temp Low: ${Math.round(
-    response.data.list[0].main.temp_min
-  )}°F`;
-
-  console.log(response.data);
 
   temperature = Math.round(response.data.list[0].main.temp);
   let mainTemp = document.querySelector(".main-temp");
@@ -93,7 +84,8 @@ let temperature = null;
 
 function displayCelsius(event) {
   event.preventDefault();
-
+  farenheit.classList.remove("active");
+  celsius.classList.add("active");
   let celsiusTemperature = Math.round(((temperature - 32) * 5) / 9);
   let mainTemperature = document.querySelector(".main-temp");
   mainTemperature.innerHTML = `${celsiusTemperature}°C`;
@@ -101,6 +93,8 @@ function displayCelsius(event) {
 
 function displayFarenheit(event) {
   event.preventDefault();
+  celsius.classList.remove("active");
+  farenheit.classList.add("active");
   let farenheitTemperature = Math.round(temperature);
   let mainTemperature = document.querySelector(".main-temp");
   mainTemperature.innerHTML = `${farenheitTemperature}°F`;
