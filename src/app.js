@@ -41,7 +41,29 @@ function showTemperature(response) {
   let description = document.querySelector(".weather-description");
   description.innerHTML = response.data.list[0].weather[0].main;
 
-  let temperature = Math.round(response.data.list[0].main.temp);
+  let humidity = document.querySelector(".humidity");
+  humidity.innerHTML = `Humidity: ${Math.round(
+    response.data.list[0].main.humidity
+  )}%`;
+
+  let windSpeed = document.querySelector(".wind");
+  windSpeed.innerHTML = `Wind Speed: ${Math.round(
+    response.data.list[0].wind.speed
+  )}m/s`;
+
+  let tempMax = document.querySelector(".temp-max");
+  tempMax.innerHTML = `Temp High: ${Math.round(
+    response.data.list[0].main.temp_max
+  )}°F`;
+
+  let tempMin = document.querySelector(".temp-min");
+  tempMin.innerHTML = `Temp Low: ${Math.round(
+    response.data.list[0].main.temp_min
+  )}°F`;
+
+  console.log(response.data);
+
+  temperature = Math.round(response.data.list[0].main.temp);
   let mainTemp = document.querySelector(".main-temp");
   mainTemp.innerHTML = `${temperature}°F`;
 }
@@ -66,3 +88,25 @@ searchCity("Raleigh");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let temperature = null;
+
+function displayCelsius(event) {
+  event.preventDefault();
+
+  let celsiusTemperature = Math.round(((temperature - 32) * 5) / 9);
+  let mainTemperature = document.querySelector(".main-temp");
+  mainTemperature.innerHTML = `${celsiusTemperature}°C`;
+}
+
+function displayFarenheit(event) {
+  event.preventDefault();
+  let farenheitTemperature = Math.round(temperature);
+  let mainTemperature = document.querySelector(".main-temp");
+  mainTemperature.innerHTML = `${farenheitTemperature}°F`;
+}
+let celsius = document.querySelector(".celsius");
+celsius.addEventListener("click", displayCelsius);
+
+let farenheit = document.querySelector(".farenheit");
+farenheit.addEventListener("click", displayFarenheit);
