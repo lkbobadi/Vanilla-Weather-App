@@ -33,12 +33,24 @@ weekDay.innerHTML = days[day];
 date.innerHTML = time;
 
 function showTemperature(response) {
-  let weatherTemp = Math.round(response.data.list[0].main.temp);
+  let icon = document.querySelector("#icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.list[0].weather[0].icon}@2x.png`
+  );
   let description = document.querySelector(".weather-description");
   description.innerHTML = response.data.list[0].weather[0].main;
 
+  let temperature = Math.round(response.data.list[0].main.temp);
   let mainTemp = document.querySelector(".main-temp");
-  mainTemp.innerHTML = `${weatherTemp}°F`;
+  mainTemp.innerHTML = `${temperature}°F`;
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#searchbar");
+  console.log(cityInput.value);
+  searchCity(cityInput.value);
 }
 
 function searchCity(city) {
@@ -50,5 +62,7 @@ function searchCity(city) {
   console.log(apiUrl);
   axios.get(apiUrl).then(showTemperature);
 }
+searchCity("Raleigh");
 
-searchCity("Durham");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
