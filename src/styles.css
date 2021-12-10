@@ -1,22 +1,27 @@
-body {
-  font-family: "Nunito", sans-serif;
-}
-.wrapper {
-  padding: 10px;
-  display: block;
+.weather {
   margin: 0 auto;
-  background: #a3b9c9;
-  width: 500px;
-  border-radius: 30px;
+  display: block;
+  padding: 10px;
+  background: #ede7cf;
+  max-width: 600px;
+}
+.container {
+  margin: 0 auto;
+  display: block;
 }
 
-#search-input {
+.wrapper {
+  padding: 10px;
+  background: #e5dcc3;
+  width: 500px;
+}
+
+#searchbar {
   width: 85%;
   padding: 5px;
-  background: #fff;
+  background: #ede7cf;
   color: #000;
   border: 0;
-  border-radius: 30px 0 0 30px;
 }
 
 #search-submit {
@@ -24,44 +29,52 @@ body {
   padding: 5px;
   border: 0;
   color: #fff;
-  background: #a09cb0;
+  background: #d4ceb0;
   transition: all 200ms ease-in-out;
-  border-radius: 0 30px 30px 0;
 }
 
 #search-submit:hover {
-  background: #827c99;
+  background: #858171;
   color: #fff;
 }
 
-.container {
-  padding: 10px;
-  margin: 0 auto;
-  display: block;
-  background: #bbe6ec;
+.city {
+  font-family: "Cairo", sans-serif;
+  color: #7e7a6f;
 }
 
+.extra-info {
+  max-width: 500px;
+  padding: 8px;
+  font-size: 12px;
+  color: #9a9483;
+  text-align: center;
+}
 .main-weather {
+  font-family: "Cairo", sans-serif;
   display: block;
   margin: 0 auto;
-  background: white;
+  background: #ede7cf;
   max-width: 500px;
-  padding: 5px;
+
   border-radius: 4px;
   text-align: center;
 }
 
-.extra-info {
-  display: block;
-  margin: 0 auto;
-  max-width: 500px;
-  padding: 8px;
-  font-size: 12px;
-  color: #987d7c;
-  text-align: center;
+.main-temp {
+  color: #7e7a6f;
+}
+.future-weather {
+  color: #9a9483;
+  background: #e5dcc3;
 }
 
 .extra-days {
-  background: #e2e8ec;
+  font-size: 13px;
+  margin: 0 auto;
   text-align: center;
+}
+.symbol img {
+  width: 100px;
+  color: #464239;
 }
