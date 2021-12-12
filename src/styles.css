@@ -84,6 +84,7 @@
 
 .main-temp {
   color: #7e7a6f;
+  font-size: 30px;
 }
 
 .switch-degrees button {
@@ -115,22 +116,34 @@
   color: #5c5952;
 }
 
-.forecast {
+.forecast-title {
+  color: #747271;
+  font-size: 23px;
+  position: relative;
+  top: -30px;
+}
+.forecast-list {
+  padding: 10px;
   display: block;
-  margin: 0 auto;
-  text-align: center;
-  color: #9a9483;
-  background: #e5dcc3;
-  font-size: 12px;
-  max-width: 90px;
   box-shadow: 2px 5px 5px #747271;
   border-radius: 4px;
   padding: 2px;
+  margin: 0 auto;
+}
+.forecast {
+  display: inline;
+  margin: 0 auto;
+  text-align: center;
+  color: #9a9483;
+  padding: 30px;
+  top: -25px;
+  position: relative;
+  background: #e5dcc3;
+  font-size: 12px;
+  max-width: 510px;
 }
 
 .extra-days {
-  display: block;
-  margin: 0 auto;
   text-align: center;
 }
 

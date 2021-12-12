@@ -75,7 +75,6 @@ function searchCity(city) {
   console.log(apiUrl);
   axios.get(apiUrl).then(showTemperature);
 }
-searchCity("Raleigh");
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
@@ -104,3 +103,24 @@ celsius.addEventListener("click", displayCelsius);
 
 let farenheit = document.querySelector(".farenheit");
 farenheit.addEventListener("click", displayFarenheit);
+
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let forecastHTML = ` <h2 class="forecast-title">Forecast</h2><div class="forecast row mb-4 ms-1 me-1">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class = "forecast-list col-2"><div class="extra-days">${day}</div>
+<div class="forecast-symbol"><img src="https://openweathermap.org/img/wn/04n@2x.png" width="50px" alt=""></div>
+<div class="min-max row"><div class="forecast-max col-6">15F</div>
+<div class="forecast-min col-6">10F</div>
+</div></div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+searchCity("Raleigh");
+displayForecast();
