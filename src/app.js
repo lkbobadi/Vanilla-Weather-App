@@ -136,7 +136,7 @@ function displayForecast(response) {
         )}</div>
   );
 <div class="forecast-symbol"><img src="https://openweathermap.org/img/wn/${
-          response.data.list[0].weather[0].icon
+          forecastDay.weather[0].icon
         }@2x.png" width="50px" alt=""></div>
 <div class="min-max row"><div class="forecast-max col-6">${Math.round(
           forecastDay.temp.max
