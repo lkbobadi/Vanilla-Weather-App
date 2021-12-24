@@ -134,7 +134,10 @@ function displayForecast(response) {
         `<div class = "forecast-list col-2"><div class="extra-days">${formatDay(
           forecastDay.dt
         )}</div>
-<div class="forecast-symbol"><img src="https://openweathermap.org/img/wn/04n@2x.png" width="50px" alt=""></div>
+  );
+<div class="forecast-symbol"><img src="https://openweathermap.org/img/wn/${
+          response.data.list[0].weather[0].icon
+        }@2x.png" width="50px" alt=""></div>
 <div class="min-max row"><div class="forecast-max col-6">${Math.round(
           forecastDay.temp.max
         )}°</div>
