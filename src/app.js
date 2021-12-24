@@ -134,7 +134,7 @@ function displayForecast(response) {
         `<div class = "forecast-list col-2"><div class="extra-days">${formatDay(
           forecastDay.dt
         )}</div>
-  );
+  
 <div class="forecast-symbol"><img src="https://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png" width="50px" alt=""></div>
