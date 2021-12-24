@@ -146,4 +146,4 @@ function displayForecast(response) {
   forecastTitle.innerHTML = forecastHTML;
 }
 
-searchCity("Raleigh");
+searchCity("New York");
